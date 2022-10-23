@@ -36,7 +36,7 @@ const ShowProduct = () => {
              {product.category}
             </Card.Text>
             <Link className="btn btn-primary mr-2" to={`/${product.id}/`}>Full Detail</Link>
-
+            
           </Card.Body>
         </Card>
         </div>

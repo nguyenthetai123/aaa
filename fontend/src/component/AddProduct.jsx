@@ -28,7 +28,7 @@ const AddProduct = () => {
       data: formField
     }).then(response=>{
       console.log(response.data);
-      history.push('/')
+      history('/');
     })
   }
   return (

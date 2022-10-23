@@ -7,20 +7,19 @@ import { Link,useNavigate } from 'react-router-dom';
 const ProductDetail = () => {
   const [product,setProduct]=useState([])
   let history = useNavigate ();
-
   const {id} = useParams();
   const getSingleProduct= async ()=>{
     const {data}= await axios.get(`http://127.0.0.1:8000/api/${id}/`)
-    console.log(data)
     setProduct(data)
   }
   
+  
   useEffect(() => {
     getSingleProduct();
-},[]);
+});
 const deleteProduct = async (id) => {
   await axios.delete(`http://127.0.0.1:8000/api/${id}/`)
-  history.push("/")
+  history("/")
 }
 
   return (
