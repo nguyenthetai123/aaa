@@ -8,7 +8,7 @@ import ProductDetail from './component/ProductDetail';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
+  Route
 } from "react-router-dom";
 
 function App() {
@@ -16,11 +16,12 @@ function App() {
     <div className='App'>
       <Router>
         <BasicNavBar/>
+          
         <Routes>
           <Route exact path='/' element={<ShowProduct/>}/>
           <Route exact path='/addProduct' element={<AddProduct/>}/>  
-          <Route exact path="/id/" component={<ProductDetail/>} />
-          <Route exact path="/:id/update/" component={<UpdateProduct/>} />
+          <Route exact path="/:id/" element={<ProductDetail/>} />
+          <Route exact path="/:id/update/" element={<UpdateProduct/>} />
          
         </Routes>
       </Router>

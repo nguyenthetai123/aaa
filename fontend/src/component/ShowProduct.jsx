@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
-import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 const ShowProduct = () => {
   const [product, setProduct]=useState([])
@@ -20,8 +21,8 @@ const ShowProduct = () => {
      
       {
         product.map((product,index)=>(
-        
-         <Card className="cart_product_info m-3 rounded shadow-lg main-students-show" style={{ width: '22rem' }}>
+        <div key={index}>
+         <Card className="cart_product_info m-3 rounded shadow-lg main-students-show" style={{ width: '22rem' }} >
           <Card.Img variant="top" src={product.image} />
           <Card.Body>
             <Card.Title>{product.name}</Card.Title>
@@ -34,10 +35,11 @@ const ShowProduct = () => {
             <Card.Text>
              {product.category}
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Link className="btn btn-primary mr-2" to={`/${product.id}/`}>Full Detail</Link>
+
           </Card.Body>
         </Card>
-        
+        </div>
         ))
       }
     </div>
